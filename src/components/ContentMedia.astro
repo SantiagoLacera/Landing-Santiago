@@ -1,0 +1,21 @@
+---
+import { Media } from "accessible-astro-components";
+export interface Props {
+  imgSrc: string;
+  reverseImg?: boolean;
+}
+
+const { imgSrc, reverseImg = false } = Astro.props;
+---
+
+<section class="flex justify-center py-10 opacity-80">
+  <div class="container">
+    <div class="md:grid-cols-2 grid grid-cols-1">
+      {!reverseImg ? <Media class="rounded-lg " src={imgSrc} /> : ""}
+      <div class="space-content flex flex-col justify-center">
+        <slot />
+      </div>
+      {reverseImg ? <Media class="rounded-lg" src={imgSrc} /> : ""}
+    </div>
+  </div>
+</section>

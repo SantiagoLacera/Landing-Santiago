@@ -1,0 +1,97 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkButton from "@components/LinkButton.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+---
+
+<Layout>
+  <Header activeNav={"about"} />
+  <main id="main-content">
+    <section id="hero" class="">
+      <Breadcrumbs />
+      <map name="room">
+        <area shape="circle" coords="45,370,35" href="/about" alt="Back" />
+        <area shape="circle" coords="650,390,35" href="/education" alt="Next" />
+      </map>
+      <div class="animate__animated animate__slideInRight flex justify-end">
+        <img
+          alt="Room-2"
+          usemap="#room"
+          class="h-auto w-[700px]"
+          src="/assets/room-character-2.png"
+          id="room-two"
+        />
+      </div>
+      <p>
+        To learn more about Colombia, click <LinkButton
+          href="https://colombia.travel/en"
+        >
+          <img
+            alt="Colombia-icon"
+            src="/assets/colombia-icon.png"
+            class="w-10 hover:animate-pulse"
+            id="col"
+          />
+        </LinkButton>
+        it won't disappoint you ;)
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<Footer />
+
+<style>
+  /* ===== Hero Section ===== */
+  /* ...existing styles... */
+  .animate__animated.animate__slideInRight {
+    animation-direction: alternate;
+    animation-duration: 1.5s;
+  }
+  #main-content {
+    animation: 2s alternate fadeIn ease-in-out;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .image-background1 {
+    @apply bg-cover bg-center bg-no-repeat duration-500 ease-in sm:bg-[url('/assets/Colombia-icons.png')];
+  }
+  .image-background2 {
+    @apply bg-cover bg-center bg-no-repeat duration-500 ease-in sm:bg-[url('/assets/ucf-background.jpg')];
+  }
+  #hero {
+    @apply pb-6;
+  }
+  #hero h1 {
+    @apply my-4 flex text-3xl font-bold sm:my-7 sm:justify-center sm:text-5xl;
+  }
+  #hero .rss-link {
+    @apply mb-6;
+  }
+  #hero .rss-icon {
+    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+  }
+  #hero p {
+    @apply my-2 p-3 pt-10 text-lg;
+  }
+  .social-wrapper {
+    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  }
+  .social-links {
+    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+  }
+  #col:hover {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=171267), auto;
+  }
+  area:hover {
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=171267), auto;
+  }
+</style>

@@ -1,0 +1,200 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+---
+
+<Layout>
+  <Header activeNav={"contact"} />
+  <main id="main-content">
+    <section id="hero">
+      <Breadcrumbs />
+      <p>Any questions or concern contact me here 👇</p>
+      <div class="feedback-card">
+        <div class="feedback-header">SEND FEEDBACK</div>
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="feedback-body"
+          id="myForm"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="f77c8d23-fc77-4b93-91b4-c243ef8b752e"
+          />
+
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Name"
+            class="feedback-body__name"
+          />
+          <input
+            type="text"
+            name="phone"
+            required
+            placeholder="Phone #"
+            class="feedback-body__phone"
+          />
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email"
+            class="feedback-body__email"
+          />
+          <textarea
+            name="message"
+            required
+            placeholder="Send me a message here..."
+            class="feedback-body__message"></textarea>
+          <input
+            type="hidden"
+            name="redirect"
+            value="https://www.santiago-lacera.online/"
+          />
+
+          <button type="submit" class="feedback-body__submit"
+            >Submit Form</button
+          >
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* ===== Hero Section ===== */
+  #main-content {
+    animation: fadeIn 1s ease-in-out;
+    padding-bottom: 5rem;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #hero {
+    @apply pb-3;
+  }
+  #hero h1 {
+    @apply my-4 flex text-3xl font-bold sm:my-7 sm:justify-center sm:text-5xl;
+  }
+  #hero h2 {
+    @apply my-4 flex pt-5 text-3xl font-bold;
+  }
+  #hero .rss-link {
+    @apply mb-6;
+  }
+  #hero .rss-icon {
+    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+  }
+  #hero p {
+    @apply my-2 pb-10 pt-10 text-lg tracking-wider;
+  }
+
+  .social-wrapper {
+    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  }
+  .social-links {
+    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+  }
+  input,
+  button,
+  textarea {
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    background-image: none;
+    background-color: #dadad3;
+    box-shadow: none;
+    padding: 10px;
+  }
+  input:focus,
+  button:focus,
+  textarea:focus {
+    outline: none;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  button {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .feedback-header {
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+  }
+  .feedback-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .feedback-body__name {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .feedback-body__phone {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .feedback-body__email {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .feedback-body__message {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .feedback-body button {
+    margin-top: 10px;
+    align-self: flex-end;
+    padding: 5px 10px;
+  }
+  .feedback-body button:hover,
+  html[data-theme="dark"] .feedback-body button:hover {
+    @apply bg-red-400;
+    cursor: url(http://www.rw-designer.com/cursor-extern.php?id=171267), auto;
+  }
+  .feedback-body button:hover,
+  html[data-theme="light"] .feedback-body button:hover {
+    @apply bg-[#116D6E];
+  }
+  .feedback-card,
+  html[data-theme="dark"] .feedback-card {
+    @apply text-black;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    max-width: 600px;
+    background-color: #edf1d6;
+    margin: 0 auto;
+    box-shadow: -0.6rem 0.6rem 0 #a8947242;
+  }
+  .feedback-card,
+  html[data-theme="light"] .feedback-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    max-width: 600px;
+    background-color: #224141;
+    margin: 0 auto;
+    box-shadow: -0.6rem 0.6rem 0 rgba(16, 39, 39, 0.259);
+    color: #ebb02d;
+  }
+  .feedback-card {
+  }
+</style>

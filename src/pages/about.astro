@@ -1,0 +1,69 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+---
+
+<Layout>
+  <Header activeNav={"about"} />
+  <main id="main-content">
+    <section id="hero">
+      <Breadcrumbs />
+      <map name="room">
+        <area shape="circle" coords="610,390,35" href="/welcome" alt="Next" />
+      </map>
+      <div class="flex justify-end">
+        <img
+          alt="Room-1"
+          usemap="#room"
+          class="h-auto w-[650px]"
+          src="/assets/room-character-1.png"
+          id="room-one"
+        />
+      </div>
+      <p>Click on the "NEXT" sign, for the following slide</p>
+    </section>
+  </main>
+
+  <Footer />
+
+  <style>
+    /* ===== Hero Section ===== */
+    #main-content {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    #hero {
+      @apply pb-6;
+    }
+    #hero h1 {
+      @apply my-4 flex text-3xl font-bold sm:my-7 sm:justify-center sm:text-5xl;
+    }
+    #hero .rss-link {
+      @apply mb-6;
+    }
+    #hero .rss-icon {
+      @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+    }
+    #hero p {
+      @apply my-2 p-3 pt-10 text-lg;
+    }
+    .social-wrapper {
+      @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+    }
+    .social-links {
+      @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+    }
+    area:hover {
+      cursor: url(http://www.rw-designer.com/cursor-extern.php?id=171267), auto;
+    }
+  </style>
+</Layout>

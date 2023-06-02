@@ -1,0 +1,95 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkButton from "@components/LinkButton.astro";
+import { SITE, SOCIALS } from "@config";
+import "@styles/base.css";
+---
+
+<Layout author={"Santiago Lacera"}>
+  <Header />
+  <main id="main-content" class="animate__animated animate__slideInUp">
+    <section id="hero">
+      <h1 id="head-text">
+        Welcome visitor<span id="glasses"></span>
+      </h1>
+      <img src="data:," class="Room" alt="Main-Room" />
+      <p>
+        It's a pleasure to have you here. Whether you stumbled upon this page by
+        chance or you intentionally sought it out, I'm thrilled that you've
+        arrived. This is a space dedicated to showcasing my passion for
+        technology, development and web-modeling so sit back, relax, and join me
+        on this exciting journey.
+      </p>
+      <p>
+        This blog posts was developed by
+        <LinkButton
+          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed cursor-[url(http://www.rw-designer.com/cursor-extern.php?id=171267),_auto]"
+          href="https://github.com/satnaing/astro-paper#readme"
+        >
+          Satnaing
+        </LinkButton> click for more info.
+      </p>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ===== Hero Section ===== */
+  .animate__animated.animate__slideInUp {
+    --animate-duration: 2s;
+  }
+  #hero {
+    @apply pb-6 pt-8;
+  }
+  #hero img {
+    @apply sm:h-[auto] sm:w-[100%];
+  }
+  #hero h1 {
+    @apply my-4 flex text-3xl font-bold text-[#D17A22] sm:my-8 sm:justify-center sm:text-5xl;
+  }
+  #hero .rss-link {
+    @apply mb-6;
+  }
+  #hero .rss-icon {
+    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
+  }
+  #hero p {
+    @apply my-2 p-3 text-lg;
+  }
+  .social-wrapper {
+    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
+  }
+  .social-links {
+    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+  }
+  #head-text,
+  html[data-theme="dark"] #head-text {
+    @apply text-[#edf1d6];
+  }
+  #head-text,
+  html[data-theme="light"] #head-text {
+    @apply text-[#224141];
+  }
+  .Room,
+  html[data-theme="light"] .Room {
+    content: url("/assets/room-lights.png");
+  }
+  .Room,
+  html[data-theme="dark"] .Room {
+    content: url("/assets/room-dark.png");
+  }
+  #glasses::before,
+  html[data-theme="light"] #glasses::before {
+    content: "👓";
+    margin-left: 10px;
+  }
+  #glasses::before,
+  html[data-theme="dark"] #glasses {
+    content: "🕶️";
+    margin-left: 10px;
+  }
+</style>
