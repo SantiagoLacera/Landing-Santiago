@@ -1,6 +1,6 @@
 # Personal Website 📄
 
-![AstroPaper](public/personal-website-og.png)
+![AstroPaper](public/assets/personal-website-og.png)
 [![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 ![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
@@ -89,7 +89,7 @@ Documentation can be read in two formats\_ _markdown_ & _blog post_.
 
 The easiest way to run this project locally is to run the following command in your desired directory.
 
-````bash
+```bash
 # git 2.0+
 git clone https://github.com/SantiagoLacera/Landing-Santiago.git
 
@@ -97,8 +97,7 @@ cd Landing-Santiago
 
 code .
 
-
-
+```
 
 ## Google Site Verification (optional)
 
@@ -107,7 +106,7 @@ You can easily add your [Google Site Verification HTML tag](https://support.goog
 ```bash
 # in your environment variable file (.env)
 PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value
-````
+```
 
 ## 🧞 Commands
 
