@@ -41,10 +41,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
           />
         </LinkButton>
         and my previous projects by visiting
-        <LinkButton
-          href="/projects"
-          className="hover:text-skin-accent underline text-[color:#00a6cc]"
-        >
+        <LinkButton href="/projects" className="underline theme">
           PROJECT-SECTION
         </LinkButton>
 
@@ -101,5 +98,13 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
   }
   .social-links {
     @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+  }
+  .theme,
+  html[data-theme="dark"] .theme {
+    @apply text-blue-300 hover:text-skin-accent;
+  }
+  .theme,
+  html[data-theme="light"] .theme {
+    @apply text-green-600 hover:text-skin-accent;
   }
 </style>
