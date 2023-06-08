@@ -2,9 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
-import { SOCIALS } from "@config";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import ContentMedia from "@components/ContentMedia.astro";
 import { ScrollObserver } from "astro-scroll-observer";
@@ -32,7 +30,7 @@ import { ScrollObserver } from "astro-scroll-observer";
       </h2>
       <div
         id="company-website"
-        class="topBar inset-0 mb-10 rounded-md border-2 border-cyan-600 bg-[url('/assets/horses-background.gif')] bg-cover bg-no-repeat pb-2 shadow-md"
+        class="inset-0 mb-10 rounded-md border-2 border-cyan-600 bg-[url('/assets/horses-background.gif')] bg-cover bg-no-repeat pb-2 shadow-md"
       >
         <a href="https://santiagolacera.github.io/Company-Website-Template/">
           <ContentMedia
@@ -58,10 +56,13 @@ import { ScrollObserver } from "astro-scroll-observer";
 
       <div
         id="personal-website"
-        class="topBar inset-0 mb-10 rounded-md border-2 border-[#eae6e3] bg-[url('/assets/personal-background.webp')] bg-cover pb-2 pt-5 shadow-md"
+        class="inset-0 z-10 mb-10 rounded-md border-2 border-[#eae6e3] bg-[url('/assets/personal-background.webp')] bg-cover pb-2 pt-5 shadow-md"
       >
         <a href="https://santiagolacera.github.io/Lu-Martinez-Design/">
-          <ContentMedia imgSrc="/assets/personal-website.png" />
+          <ContentMedia
+            imgSrc="/assets/personal-website.png"
+            reverseImg={true}
+          />
         </a>
         <p class="backOutline animate__animated animate__slideInDown">
           The website opens with a visually stunning home page that immediately
@@ -80,10 +81,10 @@ import { ScrollObserver } from "astro-scroll-observer";
 
       <div
         id="terminal"
-        class="topBar inset-0 z-10 mb-10 rounded-md border-2 border-green-500 bg-[url('/assets/terminal-background.gif')] shadow-md"
+        class="inset-0 z-10 mb-10 rounded-md border-2 border-green-500 bg-[url('/assets/terminal-background.gif')] shadow-md"
       >
         <a href="https://santiagolacera.github.io/Terminal-SL/">
-          <ContentMedia imgSrc="/assets/terminal.png" />
+          <ContentMedia imgSrc="/assets/terminal.png" reverseImg={true} />
         </a>
         <p class="backOutline animate__animated animate__slideInDown">
           The website provides a brief introduction to "Myself", including
@@ -155,9 +156,5 @@ import { ScrollObserver } from "astro-scroll-observer";
   #project-hero,
   html[data-theme="light"] #project-hero {
     @apply bg-[url('/assets/project-background-2.svg')];
-  }
-  .topBar,
-  [data-is-scrolling-up="true"][data-is-top="false"] .topBar {
-    opacity: 1;
   }
 </style>
